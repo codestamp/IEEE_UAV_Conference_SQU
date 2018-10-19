@@ -1,0 +1,52 @@
+/* Removing the Non-MST edges */
+graph G {
+	node [shape=circle];
+	a -- b  [ label=" 4" ][color=red,penwidth=2.0];
+	a -- e  [ label=" 10" ][color=red,penwidth=2.0];
+ 	a -- j  [ label=" 9" ][color=red,penwidth=2.0];
+	a -- l  [ label=" 10" ][style=invis,color=red,penwidth=2.0];   #k=1
+
+ 	b -- k  [ label=" 11" ][style=invis, color=red,penwidth=2.0]; #k=2
+	
+	c -- d  [ label=" 8" ][color=red,penwidth=2.0];
+
+	d -- l  [ label=" 6" ][color=red,penwidth=2.0];
+
+	
+	e -- f  [ label=" 9" ][style=invis,color=red,penwidth=2.0];   #k=3
+ 	f -- n  [ label=" 12" ][color=red,penwidth=2.0];
+	
+	g --o  [ label=" 16" ][color=red,penwidth=2.0];  
+	
+
+	h -- n  [ label=" 10" ][color=red,penwidth=2.0];
+	h -- p  [ label=" 12" ][style=invis,color=red,penwidth=2.0];  #k=4
+
+	i -- j  [ label=" 6" ][color=red,penwidth=2.0];
+
+
+	k -- t  [ label=" 3" ][color=red,penwidth=2.0];
+
+	l -- m  [ label=" 8" ][color=red,penwidth=2.0];
+
+	m -- u  [ label=" 8" ][style=invis,color=red,penwidth=2.0]; #k=5
+
+
+	o -- p  [ label=" 3" ][color=red,penwidth=2.0];
+	o -- x  [ label=" 25" ][color=red,penwidth=2.0];  
+
+	q -- z  [ label=" 9" ][color=red,penwidth=2.0];
+
+	r -- z  [ label=" 16" ][color=red,penwidth=2.0]; 
+
+	r;
+	s -- u  [ label=" 13" ][color=red,penwidth=2.0];
+
+	t -- z  [ label=" 13" ][color=red,penwidth=2.0];
+
+	u -- v  [ label=" 10" ][color=red,penwidth=2.0];
+
+	v -- w  [ label=" 4" ][color=red,penwidth=2.0];
+
+	y -- z  [ label=" 33" ][color=red,penwidth=2.0]; 
+} 
