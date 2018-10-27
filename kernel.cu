@@ -4,6 +4,8 @@
 #include <stdio.h> 
 #include <limits.h> 
 #include<stdbool.h> 
+#include <cstdlib>
+#include <ctime>
 #include <algorithm>
 
 // Number of vertices in the graph 
@@ -41,7 +43,7 @@ void sortGraph(int graph[V][V])
 		}
 	}
 }
-*/
+
 // A utility function to print the 
 // constructed MST stored in parent[] 
 void printMST(int parent[], int n, int graph[V][V])
@@ -50,6 +52,30 @@ void printMST(int parent[], int n, int graph[V][V])
 	printf("  Edge \t\tWeight\n");
 	for (int i = 1; i < V; i++)
 		printf("%2d - %2d \t%3d \n", parent[i], i, graph[i][parent[i]]);
+}
+*/
+void kMstClusterPrint(int parent[], int n, int graph[V][V]) {
+	//k number of clusters, let k=5
+	int k[5] = { 0 };
+	//int clusterGraph[k][V][V];
+
+	//select random edges for removal
+	srand(time(NULL));
+	for (int i = 0; i < 5; i++) {
+		k[i] = (int)rand() % 26;
+		printf("%d\t", k[i]);
+	}
+	printf("\n\n");
+	bool flag = false;
+	for (int i = 1; i < V; i++) {
+		for (int j = 0; j < 5; j++) 
+		{
+			if (i == k[j]) flag = true;
+		}
+		if (!flag) 
+			printf("%2d - %2d \t%3d \n", parent[i], i, graph[i][parent[i]]);
+		flag = false;
+	}
 }
 
 // Function to construct and print MST for 
@@ -97,7 +123,8 @@ void primMST(int graph[V][V])
 	}
 
 	// print the constructed MST 
-	printMST(parent, V, graph);
+	kMstClusterPrint(parent, V, graph);
+	//printMST(parent, V, graph);
 }
 
 
